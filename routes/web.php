@@ -15,22 +15,42 @@ Route::get('/', function () {
     return view('welcome');
     });
 
-Route::get('test',funtion(){
+Route::get('/test',funtion(){
 
 });
-$post=new\App\Post();
-$post->title='test title';
-$post->content='test content';
-$post->save();
 
-$posts=\App\Post::all();
+\App\Post::create([
+    'title'=>'test title',
+    'content'=>'test content',
+]);
+
+$post = new \App\Post();
+$post -> title = 'test title';
+$post -> content ='test content';
+$post -> save();
+
+
+$posts = \App\Post::all();
 dd($posts);
 
-$post=\App\Post::find(1);
+\App\Post::find(1);
 dd($post);
 
-$posts=\App\Post::where('id','<',10)->orderBy('id','DESC')->get();
+\App\Post::where('id', '<', 10)->orderBy('id', 'DESC')->get();
 dd($posts);
+
+/* $post=\App\Post::find(1);
+$post‐>update([
+    'title'=>'updatedtitle',
+    'content'=>'updatedcontent',
+]);
+*/
+
+$post=\App\Post::find(1);
+$post‐>title='savedtitle';
+$post‐>content='savedcontent';
+$post‐>save();
+
 
 
 
