@@ -15,7 +15,12 @@ Route::get('/', function () {
     return view('welcome');
     });
 
-\App\Post::create([
-    'tittle'=>'test tittle',
-    'content'=>'test content',
-]);
+Route::get('test',funtion(){
+
+});
+$post=new\App\Post();
+$post->title='test title';
+$post->content='test content';
+$post->save();
+
+
