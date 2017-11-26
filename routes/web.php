@@ -13,9 +13,9 @@
 
 Route::get('/', function () {
     return view('welcome');
+    });
 
-    \App\Post::create([
-        'tittle'=>'test tittle',
-        'content'=>'test content',
-    ]);
-});
+\App\Post::create([
+    'tittle'=>'test tittle',
+    'content'=>'test content',
+]);
